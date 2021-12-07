@@ -229,7 +229,7 @@ const getStatistics = async (req, res, next) => {
 
       if ( tasks ){
         results.push({
-          name: sprint.name,
+          name: (sprint.name.length > 9 ) ? sprint.name.slice(0,9) + '...' : sprint.name,
           scheduled: sprint.allScheduledTime,
           spent: sum
         })
